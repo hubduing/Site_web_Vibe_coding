@@ -1,5 +1,5 @@
 import { Link, NavLink } from 'react-router-dom'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Burger from '../Burger/Burger.jsx'
 import Button from '../Button/Button.jsx'
 import './HeaderMenu.css'
@@ -13,9 +13,31 @@ const links = [
 
 const HeaderMenu = () => {
   const [open, setOpen] = useState(false)
+  const headerRef = useRef(null)
+
+  // Закрываем мобильное меню при клике вне шапки или по Esc
+  useEffect(() => {
+    if (!open) return
+
+    const onDocClick = (e) => {
+      if (headerRef.current && !headerRef.current.contains(e.target)) {
+        setOpen(false)
+      }
+    }
+    const onKey = (e) => {
+      if (e.key === 'Escape') setOpen(false)
+    }
+
+    document.addEventListener('mousedown', onDocClick)
+    document.addEventListener('keydown', onKey)
+    return () => {
+      document.removeEventListener('mousedown', onDocClick)
+      document.removeEventListener('keydown', onKey)
+    }
+  }, [open])
 
   return (
-    <header className="header">
+    <header className="header" ref={headerRef}>
       <div className="container header__inner">
         <Link to="/" className="header__brand">
           ✦ Мир Аниме
