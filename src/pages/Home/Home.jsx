@@ -1,30 +1,7 @@
 import Button from '../../components/Button/Button.jsx'
-import Card from '../../components/Card/Card.jsx'
+import CharacterCard from '../../components/CharacterCard/CharacterCard.jsx'
+import { featuredCharacters } from '../../data/characters.js'
 import './Home.css'
-
-const featured = [
-  {
-    initial: 'Н',
-    name: 'Нэко-Хару',
-    title: 'Фэнтези · Героиня',
-    description: 'Кошка-воительница с клинком утренней зари, защищающая деревню у подножия Фудзи.',
-    tags: ['Фэнтези', 'Клинки'],
-  },
-  {
-    initial: 'Д',
-    name: 'Драконья Искра',
-    title: 'Магия · Дракон',
-    description: 'Повелитель драконов, чьё пламя способно зажигать звёзды на ночном небе.',
-    tags: ['Магия', 'Исэкай'],
-  },
-  {
-    initial: 'А',
-    name: 'Айко',
-    title: 'Научная фантастика',
-    description: 'Гениальный инженер из будущего, путешествующий сквозь пространство и время.',
-    tags: ['Sci-Fi', 'Мэха'],
-  },
-]
 
 const genres = [
   { icon: '🗡️', title: 'Фэнтези', desc: 'Миры, где магия встречает клинки' },
@@ -81,8 +58,8 @@ const Home = () => {
         </div>
 
         <div className="featured__grid">
-          {featured.map((card) => (
-            <Card key={card.name} {...card} />
+          {featuredCharacters.map((character) => (
+            <CharacterCard key={character.id} {...character} />
           ))}
         </div>
 

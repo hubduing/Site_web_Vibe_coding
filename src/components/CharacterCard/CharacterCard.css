@@ -1,0 +1,172 @@
+/* ============ Атмосферная карточка персонажа ============ */
+
+.ccard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--card-bg);
+  border: 1px solid rgba(170, 59, 255, 0.28);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.14),
+    0 0 0 1px rgba(170, 59, 255, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
+}
+
+.ccard:hover {
+  transform: translateY(-8px) scale(1.015);
+  border-color: var(--cc-glow, var(--neon));
+  box-shadow:
+    0 22px 46px rgba(0, 0, 0, 0.22),
+    0 0 22px var(--cc-glow, rgba(170, 59, 255, 0.6)),
+    0 0 0 1px var(--cc-glow, var(--neon));
+}
+
+/* Верхняя градиентная «обложка» с неоновым сиянием */
+.ccard__cover {
+  position: relative;
+  aspect-ratio: 8 / 5;
+  display: grid;
+  place-items: center;
+}
+
+.ccard__cover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 78% 30%, rgba(255, 255, 255, 0.35), transparent 55%);
+  pointer-events: none;
+}
+
+.ccard__emblem {
+  font-size: 64px;
+  line-height: 1;
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.35));
+}
+
+/* Диагональный «луч» неона поверх обложки */
+.ccard__shine {
+  position: absolute;
+  left: -30%;
+  top: -20%;
+  width: 46px;
+  height: 160%;
+  transform: rotate(24deg);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.55), transparent);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.ccard:hover .ccard__shine {
+  animation: ccard-shine 0.9s ease-in-out;
+}
+
+@keyframes ccard-shine {
+  from {
+    transform: translateX(-140%) rotate(24deg);
+  }
+  to {
+    transform: translateX(340%) rotate(24deg);
+  }
+}
+
+.ccard__kana {
+  position: absolute;
+  right: 12px;
+  bottom: 8px;
+  font: 500 13px var(--sans);
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 1px;
+}
+
+/* Тело карточки */
+.ccard__body {
+  padding: 16px 18px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ccard__title {
+  align-self: flex-start;
+  font: 600 12px var(--sans);
+  color: var(--neon);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--accent-bg);
+}
+
+.ccard__name {
+  font: 800 22px var(--heading);
+  color: var(--text-h);
+  margin: 0;
+  letter-spacing: -0.2px;
+}
+
+/* Мета-блок «Роль / Аниме» */
+.ccard__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+
+.ccard__meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 4px 10px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.045);
+}
+
+@media (prefers-color-scheme: dark) {
+  .ccard__meta-item {
+    background: rgba(255, 255, 255, 0.06);
+  }
+}
+
+.ccard__meta-item dt {
+  font: 600 10px var(--sans);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text);
+}
+
+.ccard__meta-item dd {
+  font: 600 13px var(--sans);
+  color: var(--text-h);
+  margin: 0;
+}
+
+.ccard__desc {
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.ccard__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.ccard__tag {
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--accent-bg);
+  color: var(--neon);
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid var(--accent-border);
+}
+
+.ccard__btn {
+  margin-top: 2px;
+}

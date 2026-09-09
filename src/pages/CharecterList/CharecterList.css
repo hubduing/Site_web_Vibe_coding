@@ -2,17 +2,27 @@
 
 .catalog__head {
   position: relative;
-  padding: 40px 24px;
-  background: linear-gradient(135deg, var(--sakura), var(--neon));
-  border-radius: 20px;
+  overflow: hidden;
+  padding: 44px 24px;
+  background: linear-gradient(135deg, var(--sakura), var(--neon) 60%, #6b327f);
+  border-radius: 22px;
   text-align: center;
+  box-shadow: 0 0 0 1px var(--neon), var(--neon-glow);
+}
+
+.catalog__head::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.28), transparent 55%);
+  pointer-events: none;
 }
 
 .catalog__title {
   font: 900 44px var(--heading);
   color: #fff;
   margin: 0 0 12px;
-  text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 14px rgba(0, 0, 0, 0.35);
 }
 
 .catalog__sub {
@@ -62,8 +72,8 @@
 
 .catalog__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 22px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 26px;
   padding: 8px 0 40px;
 }
 

@@ -17,28 +17,31 @@
 .btn--primary {
   background: linear-gradient(135deg, var(--neon), var(--neon-soft));
   color: #fff;
-  box-shadow: 0 6px 16px rgba(170, 59, 255, 0.35);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08), var(--neon-glow);
 }
 
 .btn--sakura {
   background: linear-gradient(135deg, var(--sakura), #ffc4d6);
   color: #5c1140;
-  box-shadow: 0 6px 16px rgba(255, 143, 179, 0.35);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 0 16px rgba(255, 143, 179, 0.5);
 }
 
 .btn--ghost {
-  background: transparent;
+  background: var(--glass-bg);
   color: var(--neon);
-  border: 2px solid var(--neon);
+  border: 2px solid var(--glass-border);
+  backdrop-filter: blur(var(--glass-blur));
 }
 
 .btn--ghost:hover {
   background: var(--accent-bg);
+  border-color: var(--neon);
+  box-shadow: var(--neon-glow);
 }
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 12px 26px rgba(170, 59, 255, 0.4);
 }
 
 .btn:active {

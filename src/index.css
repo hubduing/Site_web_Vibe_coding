@@ -105,6 +105,12 @@ p {
   --neon-soft: #d47bff;
   --paper: #fff6f0;
   --card-bg: #ffffff;
+
+  /* Токены атмосферы: неон и стекло */
+  --neon-glow: 0 0 18px rgba(170, 59, 255, 0.45);
+  --glass-bg: rgba(255, 255, 255, 0.62);
+  --glass-border: rgba(170, 59, 255, 0.25);
+  --glass-blur: 8px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -113,6 +119,9 @@ p {
     --card-bg: #221a30;
     --sakura: #ffb3c9;
     --neon-soft: #c98bff;
+    --neon-glow: 0 0 22px rgba(201, 139, 255, 0.55);
+    --glass-bg: rgba(34, 26, 48, 0.78);
+    --glass-border: rgba(201, 139, 255, 0.3);
   }
 }
 
