@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>404</title>
+  </head>
+  <body>
+    <!-- GitHub Pages SPA fallback: любой «глубокий» маршрут отдаёт 404.html,
+         который запоминает путь и перезагружает главную страницу.
+         Путь восстанавливается в src/main.jsx -->
+    <script>
+      const base = '/Site_web_Vibe_coding/'
+      const redirect = location.pathname.replace(base, '') + location.search
+      sessionStorage.setItem('ghpages-redirect', redirect)
+      location.replace(base)
+    </script>
+  </body>
+</html>
