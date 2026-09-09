@@ -60,8 +60,6 @@ const CharacterCard = ({
           </dl>
         )}
 
-        {description && <p className="ccard__desc">{description}</p>}
-
         {tags.length > 0 && (
           <div className="ccard__tags">
             {tags.map((tag) => (
@@ -71,6 +69,8 @@ const CharacterCard = ({
             ))}
           </div>
         )}
+
+        {description && <p className="ccard__desc">{description}</p>}
 
         <Button to={to} variant="ghost" className="ccard__btn">
           Подробнее →
