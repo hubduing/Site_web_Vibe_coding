@@ -1,0 +1,34 @@
+/* ============ Бургер ============ */
+
+.burger {
+  display: grid;
+  gap: 4px;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: var(--accent-bg);
+  border: 1px solid var(--neon);
+  cursor: pointer;
+  align-content: center;
+  justify-content: center;
+}
+
+.burger__line {
+  width: 20px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--neon);
+  transition: transform 0.25s, opacity 0.25s;
+}
+
+.burger.open .burger__line:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.burger.open .burger__line:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.open .burger__line:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}

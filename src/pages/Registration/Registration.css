@@ -1,0 +1,80 @@
+/* ============ Страница «Регистрация» ============ */
+
+.registration__card {
+  max-width: 640px;
+  margin: 12px auto 0;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 28px 32px;
+  box-shadow: var(--shadow);
+}
+
+.registration__title {
+  font: 900 34px var(--heading);
+  color: var(--text-h);
+  margin: 0 0 10px;
+}
+
+.registration__sub {
+  color: var(--text);
+  font-size: 16px;
+  margin: 0;
+}
+
+.registration__header {
+  margin: 0 0 20px;
+}
+
+.registration__submit {
+  width: 100%;
+}
+
+.registration__error {
+  background: #ffe4e6;
+  border: 1px solid #ffc1c6;
+  color: #b23a4b;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 15px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .registration__error {
+    background: #3a2230;
+    border-color: #8b4456;
+    color: #ff9db0;
+  }
+}
+
+/* Успех */
+.registration__success {
+  text-align: center;
+  padding: 60px 24px;
+}
+
+.registration__success-icon {
+  font-size: 64px;
+  display: block;
+  margin: 0 auto 16px;
+}
+
+.registration__success-title {
+  font: 900 38px var(--heading);
+  color: var(--text-h);
+  margin: 0 0 12px;
+}
+
+.registration__success-text {
+  color: var(--text);
+  font-size: 17px;
+  max-width: 520px;
+  margin: 0 0 24px;
+}
+
+.registration__success-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
